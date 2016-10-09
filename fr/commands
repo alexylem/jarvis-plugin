@@ -1,0 +1,2 @@
+*ALLUME*SERVEUR*==say "allumage du serveur" && `wakenas.php  > /dev/null`
+*ETEINT*SERVEUR*==say "extinction du serveur" && `shutdown.php  > /dev/null`

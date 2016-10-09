@@ -1,1 +1,2 @@
-*HELLO WORLD*==say "Hello World"
+*WAKE*SERVER*==say "Waking-up server" && `wakenas.php  > /dev/null`
+*SHUTDOWN*SERVER*==say "shutting down server" && `shutdown.php  > /dev/null`
