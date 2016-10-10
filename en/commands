@@ -1,2 +1,2 @@
-*WAKE*SERVER*==say "Waking-up server" && `wakenas.php  > /dev/null`
-*SHUTDOWN*SERVER*==say "shutting down server" && `shutdown.php  > /dev/null`
+*WAKE*SERVER*==say "Waking-up server" && `plugins/jarvis-wake-sleep-OnLan/fr/wakenas.php  > /dev/null`
+*SHUTDOWN*SERVER*==say "shutting down server" && `plugins/jarvis-wake-sleep-OnLan/fr/shutdown.php  > /dev/null`
