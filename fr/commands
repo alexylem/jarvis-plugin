@@ -1,0 +1,3 @@
+*ALLUME LA LUMIERE(*)==say "$(jarvis_lights 100 'blanc froid')"
+*ETEINT LA LUMIERE(*)==say "$(jarvis_lights 0)"
+*LUMIERE(*)==say "$(jarvis_lights (1))"
