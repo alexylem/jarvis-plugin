@@ -1,7 +1,7 @@
 from lifxlan import *
-#import subprocess
 import random
 
+NEED_SAY = ""
 COLORS_LIST = {
     "rouge" : [65535, 65535, 65535, 3500],
     "orange" : [5525, 65535, 65535, 3500],
@@ -41,8 +41,15 @@ def set_power(color, power_level):
         color[2] = power_level
     return color
 
-def jarvis_say(lan, rules):
+def jarvis_say(lan, rules, lights):
+    global NEED_SAY
     color = None
+    if rules["info"] == True:
+        info = "le nom des lumieres sont "
+        for name in lights:
+            info += name + ", "
+        NEED_SAY = info
+        return color
     says = "J\'allume la lumiere "
     if "light" in rules:
         says += " de la %s " % rules["light"]
@@ -60,52 +67,69 @@ def jarvis_say(lan, rules):
         else:
             lan.set_power_all_lights("on", rapid=True)
             says += " avec une intensite de %s pourcents" % rules["power"]
-    print(says)
-#    p = subprocess.Popen(['./jarvis.sh', '-s', says], stdout=subprocess.PIPE, stderr=subprocess.PIPE)
-#    out, err = p.communicate()
+    NEED_SAY = says
     return color
 
 def parse_arg(lan, args, lights):
     light = None
     color = None
     power_level = None
-    rules = {}
+    rules = {"info" : False}
     for i, arg in enumerate(args):
-        if i + 1 < len(args) and arg + " " + args[i + 1] in lights:
-            light = lights[arg + " " + args[i + 1]]
-            rules["light"] = arg + " " + args[i + 1]
-        elif arg in lights:
-            rules["light"] = arg
-            light = lights[lights[arg]]
+        if i + 1 < len(args) and (arg + " " + args[i + 1]).lower() in lights:
+            light = lights[(arg + " " + args[i + 1]).lower()]
+            rules["light"] = (arg + " " + args[i + 1]).lower()
+        elif arg.lower() in lights:
+            rules["light"] = arg.lower()
+            light = lights[arg.lower()]
         elif i + 1 < len(args) and arg + " " + args[i + 1] in COLORS_LIST:
             rules["color"] = arg + " " + args[i + 1]
             color = COLORS_LIST[arg + " " + args[i + 1]]
         elif arg in COLORS_LIST:
             rules["color"] = arg
             color = COLORS_LIST[arg]
+        elif arg in ["info", "information"]:
+            rules["info"] = True
         else:
             try:
                 power_level = int(arg)
                 rules["power"] = arg
             except:
                 pass
-    tmp = jarvis_say(lan, rules)
+    tmp = jarvis_say(lan, rules, lights)
     if tmp != None:
         color = tmp
     return light, color, power_level
 
+def get_lights(lan):
+    lights = {}
+    for l in lan.get_lights():
+        if l != None:
+            if l.get_label() != None:
+                lights[l.get_label().lower().replace("_", " ")] = l
+            else:
+                return get_lights(lan)
+    return lights
+
+def run(lan, lights, retry=False):
+    global NEED_SAY
+    try:
+        light, color, power_level = parse_arg(lan, sys.argv, lights)
+        if light is not None:
+            command(light, color, power_level)    
+        else:
+            for light_name in lights:
+                command(lights[light_name], color, power_level)
+    except Exception as e:
+        if retry == False:
+            run(lan, get_lights(lan), retry=True)
+        else:
+            NEED_SAY = "Erreur de connectiviter avec une ampoule"
 
 def main():
     lan = LifxLAN(None)
-    lights = {}
-    for l in lan.get_lights():
-        lights[l.get_label()] = l
-    light, color, power_level = parse_arg(lan, sys.argv, lights)
-    if light is not None:
-        command(light, color, power_level)    
-    else:
-        for light_name in lights:
-            command(lights[light_name], color, power_level)
+    run(lan, get_lights(lan))
+    print(NEED_SAY)
 
 if __name__ == "__main__":
     main()
