@@ -1,4 +1,6 @@
-*ALLUME LA LUMIERE(*)==say "$(jarvis_lights 100 'blanc froid')" & say "Je m'en charge"
-*ETEINT LA LUMIERE(*)==say "$(jarvis_lights 0)" & say "Je m'en charge"
+*ALLUME LA LUMIERE*==say "$(jarvis_lights 100 'blanc froid')" & say "Je m'en charge"
+*ETEINT LA LUMIERE*==say "$(jarvis_lights 0)" & say "Je m'en charge"
 *INFO*LUMIERE*==say "$(jarvis_lights info)"  & say "Je m'en charge"
+*AUGMENTE*LUMIERE(*)==say "$(jarvis_lights up_lights (1))" & say "Je m'en charge"
+*DIMINUE*LUMIERE(*)==say "$(jarvis_lights down_lights (1))" & say "Je m'en charge"
 *LUMIERE(*)==say "$(jarvis_lights (1))" & say "Je m'en charge"

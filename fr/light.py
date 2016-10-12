@@ -18,16 +18,31 @@ COLORS_LIST = {
     "aleatoire" : 1
 }
 
+def convert_power_updown(light, power_level, power_updown):
+    if power_updown == None:
+        return power_level
+    percent = light.get_color()[2] * 100 / 65535
+    if power_updown == True:
+        percent = percent + 10 if power_level == None else percent + power_level
+    if power_updown == False:
+        percent = percent - 10 if power_level == None else percent - power_level
+    #Check
+    if percent > 100:
+        percent = 100
+    if percent < 0:
+        percent = 0
+    return percent
+
 def command(light, color, power_level):
     if color is not None and power_level is not None:
         color = set_power(color, power_level)
     if light is not None:
-        if color is None and power_level is not None:
+        if color is None and power_level is not None: #Changement de power
             color = set_power(light.get_color(), power_level)
-        elif color is not None and power_level is None:
-            color = set_power(color, light.get_power())
-        elif color is None and power_level is None:
-            color = set_power(None, 100)
+        elif color is not None and power_level is None: #Changement de couleur mais pas de power
+            color = set_power(color, light.get_color()[2])
+        elif color is None and power_level is None: #Changement de power a 100
+            color = set_power(None, 100, power_updown)
         light.set_color(color, duration=0.2, rapid=False)
 
 def set_power(color, power_level):
@@ -51,6 +66,11 @@ def jarvis_say(lan, rules, lights):
         NEED_SAY = info
         return color
     says = "J\'allume la lumiere "
+    up_down = ""
+    if "power_up" in rules:
+        up_down = "+"
+    elif "power_down" in rules:
+        up_down = "-"
     if "light" in rules:
         says += " de la %s " % rules["light"]
     if "color" in rules:
@@ -66,7 +86,9 @@ def jarvis_say(lan, rules, lights):
             lan.set_power_all_lights("off", rapid=True)
         else:
             lan.set_power_all_lights("on", rapid=True)
-            says += " avec une intensite de %s pourcents" % rules["power"]
+            says += " avec une intensite de %s%s pourcents" % (up_down, rules["power"])
+    elif up_down != "":
+        says += " en changeant l'intensite de %s10" % up_down
     NEED_SAY = says
     return color
 
@@ -74,9 +96,16 @@ def parse_arg(lan, args, lights):
     light = None
     color = None
     power_level = None
+    power_updown = None
     rules = {"info" : False}
     for i, arg in enumerate(args):
-        if i + 1 < len(args) and (arg + " " + args[i + 1]).lower() in lights:
+        if arg == "up_lights":
+            power_updown = True
+            rules["power_up"] = True
+        elif arg == "down_lights":
+            power_updown = False
+            rules["power_down"] = True
+        elif i + 1 < len(args) and (arg + " " + args[i + 1]).lower() in lights:
             light = lights[(arg + " " + args[i + 1]).lower()]
             rules["light"] = (arg + " " + args[i + 1]).lower()
         elif arg.lower() in lights:
@@ -99,7 +128,7 @@ def parse_arg(lan, args, lights):
     tmp = jarvis_say(lan, rules, lights)
     if tmp != None:
         color = tmp
-    return light, color, power_level
+    return light, color, power_level, power_updown
 
 def get_lights(lan):
     lights = {}
@@ -114,12 +143,12 @@ def get_lights(lan):
 def run(lan, lights, retry=False):
     global NEED_SAY
     try:
-        light, color, power_level = parse_arg(lan, sys.argv, lights)
+        light, color, power_level, power_updown = parse_arg(lan, sys.argv, lights)
         if light is not None:
-            command(light, color, power_level)    
+            command(light, color, convert_power_updown(light, power_level, power_updown))
         else:
             for light_name in lights:
-                command(lights[light_name], color, power_level)
+                command(lights[light_name], color, convert_power_updown(lights[light_name], power_level, power_updown))
     except Exception as e:
         if retry == False:
             run(lan, get_lights(lan), retry=True)
