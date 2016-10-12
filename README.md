@@ -1,4 +1,15 @@
-# Description
+<!---
+IMPORTANT
+=========
+This README.md is displayed in the WebStore as well as within Jarvis app
+Please do not change the structure of this file
+Fill-in Description, Usage & Author sections
+Make sure to rename the [en] folder into the language code your plugin is written in (ex: fr, es, de, it...)
+For multi-language plugin:
+- clone the language directory and translate commands/functions.sh
+- optionally write the Description / Usage sections in several languages
+-->
+## Description
 Permet d'allumer ou d'éteindre un serveur (compatible wake on lan pour 
 l'éveil et disposant du ssh pour l'extinction).
 
@@ -20,19 +31,6 @@ Pour l'installation :
     - Dans le fichier de commande les chemins d'accès des fichiers php seront peut être à adapter
 
 
-# Usage
-Vous: Allume le serveur s'il te plait
-Jarvis: allumage en cours
-Vous : Eteint le serveur s'il te plait
-jarvis : Extinction en cours
-
-# Author & Contributors
-Rbillon
-
-________________________________________________________
-
-
-# Description
 Turn on or off a server (need to supports wake on lan and with ssh for extinction).
 
 The three php are in the store folder
@@ -53,12 +51,18 @@ For installation:
     - In the command file the file access paths php may have to be changed
 
 
-# Use
+## Usage
+```
+Vous: Allume le serveur s'il te plait
+Jarvis: allumage en cours
+Vous : Eteint le serveur s'il te plait
+jarvis : Extinction en cours
+
 You: Turn on the server please
 Jarvis: OK, waking the server
 You: Off the server please
 Jarvis: OK, I shutdown the server
+```
 
-# Author & Contributors
+## Author & Contributors
 Rbillon
-
