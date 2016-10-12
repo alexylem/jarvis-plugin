@@ -1,17 +1,15 @@
-Ceci est un plugin pour [Jarvis](https://github.com/alexylem/jarvis)
-It augments what Jarvis can understand and execute
-
 ## Description:
 Plugin pour [Jarvis](https://github.com/alexylem/jarvis)
-Ce dernier permet de controler vos lumières lifx
+
+Celui ci permet de controler vos lumières lifx
 
 ## Usage:
-[ALLUME LA LUMIERE]
-[ETEINT LA LUMIERE]
-[INFO*LUMIERE]
-[AUGMENTE*LUMIERE] [Couleur] [Label_lifx] [Power]
-[DIMINUE*LUMIERE] [Couleur] [Label_lifx] [Power]
-[LUMIERE] [Couleur] [Label_lifx] [Power]
+* [ALLUME LA LUMIERE]
+* [ETEINT LA LUMIERE]
+* [INFO*LUMIERE]
+* [AUGMENTE*LUMIERE] [Couleur] [Label_lifx] [Power]
+* [DIMINUE*LUMIERE] [Couleur] [Label_lifx] [Power]
+* [LUMIERE] [Couleur] [Label_lifx] [Power]
 
 ## Example:
 ```
@@ -55,5 +53,5 @@ Jarvis: J'allume la lumiere de la lit haut avec une couleur aleatoire qui sera v
 ## Author
 [Cedric Devaux](https://github.com/devauxa)
 
-See other plugins on the Jarvis store:  
+See other plugins on the Jarvis store:
 http://domotiquefacile.fr/jarvis/
