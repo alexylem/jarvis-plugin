@@ -9,14 +9,14 @@ For multi-language plugin:
 - clone the language directory and translate commands/functions.sh
 - optionally write the Description / Usage sections in several languages
 -->
-# Description
+## Description
 Description of your Plugin
 
-# Usage
+## Usage
 ```
 You: example of how to trigger the command
 Jarvis: output from Jarvis
 ```
 
-# Author
+## Author
 [your name](http://your.website)
