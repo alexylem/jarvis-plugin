@@ -10,7 +10,7 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
-Permet de faire des calcul mathématique sur les opération de base: addition, soustraction, multiplication et division.
+Permet de faire des calculs mathématiques sur les opérations de base: additions, soustractions, multiplications et divisions.
 
 ## Usage
 ```
