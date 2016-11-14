@@ -10,13 +10,21 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
-Description of your Plugin
+Permet de faire des calcul mathématique sur les opération de base: addition, soustraction, multiplication et division.
 
 ## Usage
 ```
-You: example of how to trigger the command
-Jarvis: output from Jarvis
+You: Calcul deux fois quatre
+Jarvis: 2 * 4 est ègale à 8
+
+You: Calcul 12 multiplié par deux
+Jarvis: 12 * 2 est ègale à 24
+
+You: Calcul 12 divisé par deux
+Jarvis: 12 divisé par 2 est ègale à 6
+
+
 ```
 
 ## Author
-[your name](http://your.website)
+[Jean-Bernard Hallez](https://github.com/Jean-Bernard-Hallez/jarvis-plugin-math.git)
