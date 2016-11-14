@@ -10,18 +10,18 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
-Permet de faire des calculs mathématiques sur les opérations de base: additions, soustractions, multiplications et divisions.
+Permet de faire des calculs mathematiques sur les operations de base: additions, soustractions, multiplications et divisions.
 
 ## Usage
 ```
 You: Calcul deux fois quatre
-Jarvis: 2 * 4 est ègale à 8
+Jarvis: 2 * 4 est egale a 8
 
 You: Calcul 12 multiplié par deux
-Jarvis: 12 * 2 est ègale à 24
+Jarvis: 12 * 2 est egale a 24
 
 You: Calcul 12 divisé par deux
-Jarvis: 12 divisé par 2 est ègale à 6
+Jarvis: 12 divise par 2 est egale a 6
 
 
 ```
