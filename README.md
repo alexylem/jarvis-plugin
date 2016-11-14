@@ -13,17 +13,15 @@ For multi-language plugin:
 Permet de faire des calculs mathematiques sur les operations de base: additions, soustractions, multiplications et divisions.
 
 ## Usage
-```
+```yml
 You: Calcul deux fois quatre
 Jarvis: 2 * 4 est egale a 8
 
-You: Calcul 12 multiplié par deux
+You: Calcul 12 multipliÃ© par deux
 Jarvis: 12 * 2 est egale a 24
 
-You: Calcul 12 divisé par deux
+You: Calcul 12 divisÃ© par deux
 Jarvis: 12 divise par 2 est egale a 6
-
-
 ```
 
 ## Author
