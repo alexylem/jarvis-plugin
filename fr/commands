@@ -1,0 +1,1 @@
+*TEMP*TRAJET*TRAVAIL*==say "Je cogite" && say "$(jv_pg_cm_time "$TRAVAIL") minutes pour aller au taf" 
