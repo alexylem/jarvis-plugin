@@ -7,7 +7,7 @@ APIKEYCM=
 FROM=
 TRAVAIL=
 
-
+#date iso
 DATE="$(date +"%Y-%m-%dT%H:%M:%S%z")"
 
 
