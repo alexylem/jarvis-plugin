@@ -9,7 +9,6 @@ jv_pg_ap_search ()
 local APPEAR_IN_QUERY="https://appear.in/$appear_room"
 
 #open defaut web browser with the appear.in room
-nohup chromium-browser %U $APPEAR_IN_QUERY
+chromium-browser %U $APPEAR_IN_QUERY
 
 }
-

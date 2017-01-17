@@ -30,4 +30,4 @@ Jarvis: XXXXXXXXXXX
 ```
 
 ## Author
-[Pascal Obstetar](http://obooqo.eu)
+[Pascal Obstetar]
