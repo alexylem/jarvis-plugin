@@ -1,25 +1,8 @@
 #!/bin/bash
-jv_version
-jv_dir
-order
-jv_arch
-jv_os_name
-jv_os_version
-jv_repeat_last_command()
-jv_display_commands()
-say()
-jv_curl()
-mpack
-jv_spinner()
-jv_read_dom()
-jv_sanitize()
-jv_error()
-jv_warning()
-jv_success()
-jv_info()
-jv_debug()
-jv_press_enter_to_continue()
-jv_exit()
-jv_yesno()
-
-
+# Here you can create functions which will be available from the commands file
+# You can also use here user variables defined in your config file
+# To avoid conflicts, name your function like this
+# pg_XX_myfunction () { }
+# pg for PluGin
+# XX is a short code for your plugin, ex: ww for Weather Wunderground
+# You can use translations provided in the language folders functions.sh
