@@ -1,1 +1,6 @@
-
+*AJOUTE (*) A LA LISTE*==echo "(1)" >> ~/listedescourses.txt && say "J'ai ajouté (1) à la liste"
+*SUPPRIME*LA LISTE*|*VIDE*LA LISTE*==say "Veux tu confirmer la supression de la liste des courses?"
+>*OUI*==echo "" > ~/listedescourses.txt && say "Ok la liste est effacée"
+>*NON*==say "Je ne la supprime pas"
+*LIS LA LISTE*|*QUOI*DANS*LA*LIS*COUR*==say "elle contient $(cat ~/listedescourses.txt)"
+*ENVOI*LA*LIST*MAIL*==mpack -s "Contenu de la liste des courses" /home/pi/listedescourses.txt VOTREMAIL@hotmail.com && say "La liste des courses a été envoyer à VOTREPRENOM"
