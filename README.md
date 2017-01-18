@@ -10,13 +10,24 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
-Description of your Plugin
+Ask Jarvis to open appear.in room / Demander à Jarvis d'ouvrir une chambre de discussion appear.in
 
 ## Usage
+EN
+
 ```
-You: example of how to trigger the command
-Jarvis: output from Jarvis
+You: Call XXXXX
+Jarvis: I call
+Jarvis: XXXXXXXXXXX
+```
+------------------------------------------------------------------
+FR
+
+```
+You: Appel XXXXX
+Jarvis: Je l'appelle'
+Jarvis: XXXXXXXXXXX
 ```
 
 ## Author
-[your name](http://your.website)
+[Pascal Obstetar]
