@@ -54,4 +54,4 @@ Jarvis: La liste des courses a été envoyer à VOTREPRENOM
 ```
 
 ## Author
-[tchoul] et [godinperson](https://github.com/tchoul)
+[tchoul] et [godinperson] (https://github.com/tchoul)
