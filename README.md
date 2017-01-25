@@ -10,13 +10,30 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
-Description of your Plugin
+This plugin is to find informations about Timetable of the trains of the Belgian railway from your location 
+At this time, you have to define in config.sh the departure and arrival stations
+So it's usable from your nearest station to your favorite station.
+I'm in the prcess to add the possibility to tell the destination station. 
+JArvis tell the three following departures from the current time
+
 
 ## Usage
 ```
-You: example of how to trigger the command
-Jarvis: output from Jarvis
+Les mots clés sont "horaire" et "train" tels que définis dans commandes.sh
+
+You: Donne-moi les horaires de train
+Jarvis: 
+ vers Bruxelles-Nord 
+12:46 en direction de Ottignies
+      pas de retard annoncé
+ ensuite 
+13:15 en direction de Namur
+      pas de retard annoncé
+ ensuite 
+13:46 en direction de Ottignies
+      pas de retard annoncé
 ```
 
+
 ## Author
-[your name](http://your.website)
+Yvan Dellis
