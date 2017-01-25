@@ -1,0 +1,1 @@
+*HORAIRE*TRAIN(*)== say "Les prochaines heures de depart sont" && say "$(jv_pg_cb_timetable "(1)")"
