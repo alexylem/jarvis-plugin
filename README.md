@@ -10,13 +10,13 @@ For multi-language plugin:
 - optionally write the Description / Usage sections in several languages
 -->
 ## Description
-Description of your Plugin
+Plugin permettant de commander des prises chacon
 
 ## Usage
 ```
-You: example of how to trigger the command
-Jarvis: output from Jarvis
+You: ALLUME lampe salon
+Jarvis: J'alume lampe salon
 ```
 
 ## Author
-[your name](http://your.website)
+Lusitanos67
