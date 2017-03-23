@@ -12,25 +12,25 @@ For multi-language plugin:
 ## Description
 This plugin uses mochad to control your X10 devices.
 It will allow you to simply turn on and off your devices.
-For now needs mochad pre-installed, this will be automated in an update.
-See https://www.domoticz.com/wiki/X10_devices,_CM15_Pro
+For now needs wiring pre-installed, this will be automated in an update.
+See https://arno0x0x.wordpress.com/2015/04/02/rf433-outlet/
 
 ## Configuration
 
-1. Indicate the port mochad uses (default is 1099):
+1. Indicate the controler code uses (default:12325261):
    
    ```
-   pg_x10_mochad_port=1099
+   pg_chacon_num=12325261
    ```
    
 2. List your device names & corresponding addresses in `json` format
    
    ```
-   pg_hc_config='{ "devices":[
-       { "name": "BEDROOM", "address": "A1"},
-       { "name": "LIVING ROOM", "address": "A2"},
-       { "name": "BAR", "address": "A3"}
-   ]}'
+   pg_chacon_config='{ "devices":[
+    { "name": "SALON", "address": "1"},
+    { "name": "SALLE A MANGER", "address": "2"},
+    { "name": "CUISINE", "address": "3"}
+]}'
    ```
 
 ## Usage
@@ -40,7 +40,8 @@ See https://www.domoticz.com/wiki/X10_devices,_CM15_Pro
    ```
    Vous: allume le bar
    Jarvis: J'allume le bar...
-   # > echo "pl A3 on" | nc localhost 1099
+   # > ...
+   Jarvis: C'est fait...
    ```
     
    English
@@ -48,8 +49,7 @@ See https://www.domoticz.com/wiki/X10_devices,_CM15_Pro
    ```
    You: turn on the bar
    Jarvis: Switching on the bar...
-   # > echo "pl A3 on" | nc localhost 1099
    ```
 
 ## Author
-[alexylem](https://github.com/alexylem)
+[Lusitanos67](https://github.com/Lusitanos67)
