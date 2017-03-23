@@ -30,7 +30,7 @@ See https://arno0x0x.wordpress.com/2015/04/02/rf433-outlet/
     { "name": "SALON", "address": "1"},
     { "name": "SALLE A MANGER", "address": "2"},
     { "name": "CUISINE", "address": "3"}
-]}'
+    ]}'
    ```
 
 ## Usage
