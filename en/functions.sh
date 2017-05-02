@@ -9,7 +9,7 @@
 #      say "$(pv_myplugin_lang the_answer_is "oui")"
 #      => Jarvis: La réponse est oui
 
-#pv_XXX_lang () {
+#pg_XXX_lang () {
 #    case "$1" in
 #        i_check) echo "Je regarde...";;
 #        the_answer_is) echo "La réponse est $2";;
